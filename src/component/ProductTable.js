@@ -30,15 +30,15 @@ const ProductTable = ({ products, onEdit, onDelete, onDisable, isAdmin }) => {
           {products?.length &&
             products?.map((product) => (
               <tr
-                key={product.name}
                 style={{ opacity: product.isDisabled ? 0.5 : 1 }}
+                key={product.name}
               >
                 <td>{product.name}</td>
                 <td>{product.category}</td>
                 <td>{product.price}</td>
                 <td>{product.quantity}</td>
 
-                <td>
+                <td style={{ opacity: !isAdmin ? 0.5 : 1 }}>
                   <button
                     className="editBtn"
                     onClick={() => onEdit(product.name)}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Grid } from "@mui/material";
 import {
   FaShoppingCart,
@@ -12,7 +12,7 @@ import InfoCard from "./InfoCard";
 const DashboardCard = ({ products }) => {
   const stats = products.reduce(
     (acc, product) => {
-      const quantity = product.quantity;
+      const quantity = parseInt(product.quantity);
       const price = parseFloat(product.price.replace("$", ""));
 
       acc.totalProducts += quantity;
